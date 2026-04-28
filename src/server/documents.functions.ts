@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { attachSupabaseAuth } from "./auth-client-middleware";
 import type { Database } from "@/integrations/supabase/types";
 import { runExtraction } from "./documents.server";
 
@@ -9,7 +10,7 @@ type Json = Database["public"]["Tables"]["documents"]["Update"]["extracted_data"
 const extractInput = z.object({ documentId: z.string().uuid() });
 
 export const extractDocument = createServerFn({ method: "POST" })
-  .middleware([requireSupabaseAuth])
+  .middleware([attachSupabaseAuth, requireSupabaseAuth])
   .inputValidator((data) => extractInput.parse(data))
   .handler(async ({ data, context }) => {
     const { supabase, userId } = context;
@@ -72,7 +73,7 @@ const saveInput = z.object({
 });
 
 export const saveExtraction = createServerFn({ method: "POST" })
-  .middleware([requireSupabaseAuth])
+  .middleware([attachSupabaseAuth, requireSupabaseAuth])
   .inputValidator((data) => saveInput.parse(data))
   .handler(async ({ data, context }) => {
     const { supabase, userId } = context;
