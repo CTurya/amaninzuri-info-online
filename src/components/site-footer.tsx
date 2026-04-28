@@ -10,7 +10,7 @@ export function SiteFooter() {
             <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-rose text-primary-foreground">
               <Flower2 className="h-4 w-4" />
             </span>
-            <span className="font-display text-2xl">Petal</span>
+            <span className="font-display text-2xl">Amani Nzuri</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
             Beautifully simple client record-keeping for small business owners who'd rather be doing the work they love.
@@ -32,7 +32,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-warm/60 py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Petal. Made with care.
+        © {new Date().getFullYear()} Amani Nzuri Information Management Consulting. Made with care.
       </div>
     </footer>
   );

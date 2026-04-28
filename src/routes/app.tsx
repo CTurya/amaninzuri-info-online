@@ -45,7 +45,7 @@ function AppLayout() {
       <aside className="fixed inset-y-0 left-0 w-64 border-r border-warm bg-cream/60 hidden md:flex flex-col p-6">
         <Link to="/" className="flex items-center gap-2 mb-10">
           <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-rose text-primary-foreground"><Flower2 className="h-4 w-4" /></span>
-          <span className="font-display text-2xl">Petal</span>
+          <span className="font-display text-2xl">Amani Nzuri</span>
         </Link>
         <nav className="space-y-1 flex-1">
           <NavItem to="/app" icon={LayoutDashboard} label="Dashboard" exact />
@@ -90,7 +90,7 @@ function MobileNav({ onSignOut, email }: { onSignOut: () => void; email: string 
     <div className="md:hidden flex items-center justify-between px-6 py-4 border-b border-warm bg-cream/60">
       <Link to="/" className="flex items-center gap-2">
         <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-rose text-primary-foreground"><Flower2 className="h-3.5 w-3.5" /></span>
-        <span className="font-display text-xl">Petal</span>
+        <span className="font-display text-xl">Amani Nzuri</span>
       </Link>
       <div className="flex items-center gap-4">
         <Link to="/app/clients" className="text-sm">Clients</Link>

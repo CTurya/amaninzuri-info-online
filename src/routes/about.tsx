@@ -5,9 +5,9 @@ import { SiteFooter } from "@/components/site-footer";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Petal" },
-      { name: "description", content: "Petal is built for the small businesses, studios and solo founders the big software forgot." },
-      { property: "og:title", content: "About — Petal" },
+      { title: "About — Amani Nzuri" },
+      { name: "description", content: "Amani Nzuri is built for the small businesses, studios and solo founders the big software forgot." },
+      { property: "og:title", content: "About — Amani Nzuri" },
       { property: "og:description", content: "A calm, beautiful tool for the businesses big software forgot." },
     ],
   }),
@@ -29,13 +29,13 @@ function AboutPage() {
       <section className="py-20">
         <div className="mx-auto max-w-2xl px-6 prose-lg space-y-6 text-foreground/80 text-lg leading-relaxed">
           <p>
-            Petal started with a simple frustration: most business software feels like it was built for skyscrapers, not studios. Endless menus. Sterile colours. Features no one asked for.
+            Amani Nzuri started with a simple frustration: most business software feels like it was built for skyscrapers, not studios. Endless menus. Sterile colours. Features no one asked for.
           </p>
           <p>
             We make tools for florists, photographers, therapists, bookkeepers, designers, makers — the small businesses that keep neighbourhoods alive. The kind of work where every client matters.
           </p>
           <p>
-            That's why Petal looks the way it does: warm, paper-soft, quiet. And why it does just three things, well: hold your client records, store your documents safely, and let AI do the dull data entry for you.
+            That's why Amani Nzuri looks the way it does: warm, paper-soft, quiet. And why it does just three things, well: hold your client records, store your documents safely, and let AI do the dull data entry for you.
           </p>
           <p className="font-display italic text-rose-deep">
             Less filing. More flowering.

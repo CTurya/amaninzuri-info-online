@@ -6,9 +6,9 @@ import { Cloud, Sparkles, Users, FileSearch, ShieldCheck, FolderHeart, Tag, Shar
 export const Route = createFileRoute("/features")({
   head: () => ({
     meta: [
-      { title: "Features — Petal" },
-      { name: "description", content: "Everything Petal does to keep your client records and documents calm, searchable, and safe in the cloud." },
-      { property: "og:title", content: "Features — Petal" },
+      { title: "Features — Amani Nzuri" },
+      { name: "description", content: "Everything Amani Nzuri does to keep your client records and documents calm, searchable, and safe in the cloud." },
+      { property: "og:title", content: "Features — Amani Nzuri" },
       { property: "og:description", content: "Cloud storage, AI document extraction, tags, sharing, and more." },
     ],
   }),
@@ -19,7 +19,7 @@ function FeaturesPage() {
   const features = [
     { icon: Users, title: "Client records", desc: "Names, contacts, companies, custom notes — every detail in one tidy profile." },
     { icon: Cloud, title: "Cloud document vault", desc: "Encrypted, backed-up storage. Your files are safe even if your laptop isn't." },
-    { icon: Sparkles, title: "AI data extraction", desc: "Petal reads your invoices, receipts and contracts and pulls out the data automatically." },
+    { icon: Sparkles, title: "AI data extraction", desc: "We read your invoices, receipts and contracts and pulls out the data automatically." },
     { icon: FileSearch, title: "Search everything", desc: "Find by name, tag, or what's actually written inside a document." },
     { icon: Tag, title: "Custom tags", desc: "Categorise the way your business works — by project, status, season, or vibe." },
     { icon: Share2, title: "Multi-user & sharing", desc: "Invite your team or share a single client folder with a collaborator." },
