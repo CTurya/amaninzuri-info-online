@@ -5,9 +5,9 @@ import { SiteFooter } from "@/components/site-footer";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Petal" },
+      { title: "About — Amani Nzuri" },
       { name: "description", content: "Petal is built for the small businesses, studios and solo founders the big software forgot." },
-      { property: "og:title", content: "About — Petal" },
+      { property: "og:title", content: "About — Amani Nzuri" },
       { property: "og:description", content: "A calm, beautiful tool for the businesses big software forgot." },
     ],
   }),

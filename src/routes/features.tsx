@@ -6,9 +6,9 @@ import { Cloud, Sparkles, Users, FileSearch, ShieldCheck, FolderHeart, Tag, Shar
 export const Route = createFileRoute("/features")({
   head: () => ({
     meta: [
-      { title: "Features — Petal" },
+      { title: "Features — Amani Nzuri" },
       { name: "description", content: "Everything Petal does to keep your client records and documents calm, searchable, and safe in the cloud." },
-      { property: "og:title", content: "Features — Petal" },
+      { property: "og:title", content: "Features — Amani Nzuri" },
       { property: "og:description", content: "Cloud storage, AI document extraction, tags, sharing, and more." },
     ],
   }),

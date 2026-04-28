@@ -9,7 +9,7 @@ export function SiteHeader() {
           <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-rose text-primary-foreground shadow-soft transition-transform group-hover:rotate-12">
             <Flower2 className="h-4 w-4" />
           </span>
-          <span className="font-display text-2xl font-medium tracking-tight">Petal</span>
+          <span className="font-display text-2xl font-medium tracking-tight">Amani Nzuri</span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-foreground/70">
           <Link to="/features" className="hover:text-foreground transition-colors" activeProps={{ className: "text-foreground" }}>Features</Link>

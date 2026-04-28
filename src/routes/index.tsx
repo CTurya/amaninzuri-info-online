@@ -7,9 +7,9 @@ import heroImage from "@/assets/hero-desk.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Petal — Digitise client records for small business" },
+      { title: "Amani Nzuri Information Management Consulting — Digitise client records for small business" },
       { name: "description", content: "A calm, beautiful way to digitise client records, store documents in the cloud, and let AI extract the details for you." },
-      { property: "og:title", content: "Petal — Digitise client records for small business" },
+      { property: "og:title", content: "Amani Nzuri Information Management Consulting — Digitise client records for small business" },
       { property: "og:description", content: "A calm, beautiful way to digitise client records, store documents in the cloud, and let AI extract the details for you." },
     ],
   }),

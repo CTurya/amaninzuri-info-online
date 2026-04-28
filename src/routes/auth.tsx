@@ -7,7 +7,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Sign in — Petal" },
+      { title: "Sign in — Amani Nzuri" },
       { name: "description", content: "Sign in or create your free Amani Nzuri account." },
     ],
   }),
@@ -67,7 +67,7 @@ function AuthPage() {
         <div className="relative z-10 max-w-md">
           <Link to="/" className="flex items-center gap-2 mb-12">
             <span className="grid h-9 w-9 place-items-center rounded-full bg-background/20 backdrop-blur"><Flower2 className="h-4 w-4" /></span>
-            <span className="font-display text-2xl">Petal</span>
+            <span className="font-display text-2xl">Amani Nzuri</span>
           </Link>
           <h2 className="font-display text-4xl leading-tight">
             "Amani Nzuri turned my receipt drawer into a searchable archive in an afternoon."
@@ -80,7 +80,7 @@ function AuthPage() {
         <div className="w-full max-w-sm">
           <Link to="/" className="lg:hidden flex items-center gap-2 mb-8">
             <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-rose text-primary-foreground"><Flower2 className="h-4 w-4" /></span>
-            <span className="font-display text-2xl">Petal</span>
+            <span className="font-display text-2xl">Amani Nzuri</span>
           </Link>
           <h1 className="font-display text-4xl font-medium">
             {mode === "signin" ? "Welcome back" : "Create your garden"}
