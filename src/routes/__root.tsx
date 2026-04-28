@@ -30,7 +30,7 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Petal — Digitise client records for small business" },
-      { name: "description", content: "Petal helps small businesses digitise client records, store documents in the cloud, and extract data automatically with AI." },
+      { name: "description", content: "Amani Nzuri helps small businesses digitise client records, store documents in the cloud, and extract data automatically with AI." },
       { name: "author", content: "Petal" },
       { property: "og:title", content: "Petal — Digitise client records for small business" },
       { property: "og:description", content: "Beautifully simple cloud document management with AI data extraction for small businesses." },

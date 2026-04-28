@@ -20,7 +20,7 @@ function PricingPage() {
     {
       name: "Seedling",
       price: "Free",
-      blurb: "Perfect for trying Petal out.",
+      blurb: "Perfect for getting started.",
       features: ["Up to 25 clients", "1 GB document storage", "AI extraction (50/mo)", "Single user"],
       cta: "Start free",
       highlight: false,

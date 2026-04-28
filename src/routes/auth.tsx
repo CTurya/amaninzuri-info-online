@@ -8,7 +8,7 @@ export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
       { title: "Sign in — Petal" },
-      { name: "description", content: "Sign in or create your free Petal account." },
+      { name: "description", content: "Sign in or create your free Amani Nzuri account." },
     ],
   }),
   component: AuthPage,
@@ -46,7 +46,7 @@ function AuthPage() {
           },
         });
         if (error) throw error;
-        toast.success("Welcome to Petal!", { description: "Your garden is ready." });
+        toast.success("Welcome to Amani Nzuri!", { description: "Your garden is ready." });
       } else {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
@@ -70,7 +70,7 @@ function AuthPage() {
             <span className="font-display text-2xl">Petal</span>
           </Link>
           <h2 className="font-display text-4xl leading-tight">
-            "Petal turned my receipt drawer into a searchable archive in an afternoon."
+            "Amani Nzuri turned my receipt drawer into a searchable archive in an afternoon."
           </h2>
           <p className="mt-6 text-primary-foreground/80">— Mae, ceramics studio owner</p>
         </div>
@@ -133,7 +133,7 @@ function AuthPage() {
           </form>
 
           <p className="mt-6 text-center text-sm text-foreground/70">
-            {mode === "signin" ? "New to Petal?" : "Already have an account?"}{" "}
+            {mode === "signin" ? "New to Amani Nzuri?" : "Already have an account?"}{" "}
             <button
               onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
               className="font-medium text-rose-deep hover:underline"

@@ -19,7 +19,7 @@ function FeaturesPage() {
   const features = [
     { icon: Users, title: "Client records", desc: "Names, contacts, companies, custom notes — every detail in one tidy profile." },
     { icon: Cloud, title: "Cloud document vault", desc: "Encrypted, backed-up storage. Your files are safe even if your laptop isn't." },
-    { icon: Sparkles, title: "AI data extraction", desc: "Petal reads your invoices, receipts and contracts and pulls out the data automatically." },
+    { icon: Sparkles, title: "AI data extraction", desc: "We read your invoices, receipts and contracts and pulls out the data automatically." },
     { icon: FileSearch, title: "Search everything", desc: "Find by name, tag, or what's actually written inside a document." },
     { icon: Tag, title: "Custom tags", desc: "Categorise the way your business works — by project, status, season, or vibe." },
     { icon: Share2, title: "Multi-user & sharing", desc: "Invite your team or share a single client folder with a collaborator." },

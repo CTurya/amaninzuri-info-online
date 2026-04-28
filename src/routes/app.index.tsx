@@ -60,7 +60,7 @@ function DashboardPage() {
         <ActionCard
           to="/app/documents"
           title="Upload a document"
-          desc="Drop a file in. Petal will read it and extract the details."
+          desc="Drop a file in. Our AI will read it and extract the details."
         />
       </div>
     </div>

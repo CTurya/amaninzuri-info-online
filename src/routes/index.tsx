@@ -46,7 +46,7 @@ function Hero() {
               <span className="italic text-rose-deep">finally in bloom.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-foreground/70 leading-relaxed">
-              Petal is the calm, paper-soft way to digitise client information and documents.
+              Amani Nzuri is the calm, paper-soft way to digitise client information and documents.
               Upload, organise, and let AI pull the details out — so you can spend less time filing and more time doing.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
@@ -107,7 +107,7 @@ function FeaturesGrid() {
   const features = [
     { icon: Users, title: "Client records, organised", desc: "Keep contacts, notes, tags, and history in one calm place. Find anyone in seconds." },
     { icon: Cloud, title: "Documents in the cloud", desc: "Drag, drop, done. Every file is encrypted, backed up, and tied to the right client." },
-    { icon: Sparkles, title: "AI reads the paper for you", desc: "Receipts, invoices, contracts — Petal extracts the key details so you don't retype." },
+    { icon: Sparkles, title: "AI reads the paper for you", desc: "Receipts, invoices, contracts — Our AI extracts the key details so you don't retype." },
     { icon: FolderHeart, title: "Tags & smart folders", desc: "Group by project, status, or anything you like. Custom tags for the way you work." },
     { icon: ShieldCheck, title: "Private by default", desc: "Row-level security means only you and your team see your records. Always." },
     { icon: FileSearch, title: "Full-text search", desc: "Search inside documents, not just file names. Even handwritten scans, soon." },
@@ -143,7 +143,7 @@ function FeaturesGrid() {
 function HowItWorks() {
   const steps = [
     { n: "01", title: "Add your clients", desc: "Manually or import a CSV. Organise with tags and notes the way you actually think." },
-    { n: "02", title: "Upload anything", desc: "PDFs, photos, scans, contracts. Petal stores them safely and ties each file to a client." },
+    { n: "02", title: "Upload anything", desc: "PDFs, photos, scans, contracts. We store them safely and ties each file to a client." },
     { n: "03", title: "Let AI do the typing", desc: "We extract names, dates, amounts and key terms automatically. You just review and save." },
   ];
   return (
@@ -171,7 +171,7 @@ function CTASection() {
           Less filing. More flowering.
         </h2>
         <p className="mt-5 text-lg text-foreground/70 max-w-xl mx-auto">
-          Try Petal free. Set up your first 25 client records in under five minutes.
+          Get started free. Set up your first 25 client records in under five minutes.
         </p>
         <div className="mt-9">
           <Link
