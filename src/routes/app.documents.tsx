@@ -155,6 +155,19 @@ function DocumentsPage() {
                   <option value="">Unassigned</option>
                   {clients.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
                 </select>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault(); e.stopPropagation();
+                    toast.info("Re-running AI extraction…");
+                    extract({ data: { documentId: d.id } })
+                      .then(() => { toast.success(`AI ready: ${d.file_name}`); load(); })
+                      .catch((err) => { toast.error(`Extraction failed: ${err instanceof Error ? err.message : "unknown"}`); load(); });
+                  }}
+                  className="p-2 rounded-full hover:bg-background text-foreground/60 hover:text-foreground"
+                  title="Re-run AI extraction"
+                >
+                  <RefreshCw className="h-4 w-4" />
+                </button>
                 <button onClick={(e) => handleDownload(e, d)} className="p-2 rounded-full hover:bg-background text-foreground/60 hover:text-foreground" title="Open">
                   <Download className="h-4 w-4" />
                 </button>
@@ -162,6 +175,7 @@ function DocumentsPage() {
                   <Trash2 className="h-4 w-4" />
                 </button>
                 <ChevronRight className="h-4 w-4 text-foreground/30" />
+
               </Link>
             ))}
           </div>
