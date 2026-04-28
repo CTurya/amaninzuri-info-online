@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ArrowRight, Cloud, Sparkles, FileSearch, ShieldCheck, FolderHeart, Database, GraduationCap, Workflow } from "lucide-react";
-import heroImage from "@/assets/hero-desk.jpg";
+import heroImage from "@/assets/logo.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -70,13 +70,11 @@ function Hero() {
 
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-rose opacity-20 blur-2xl rounded-[2rem]" aria-hidden />
-            <div className="relative overflow-hidden rounded-[1.75rem] shadow-warm ring-1 ring-warm">
+            <div className="relative aspect-square overflow-hidden rounded-[1.75rem] bg-cream shadow-warm ring-1 ring-warm flex items-center justify-center p-10">
               <img
                 src={heroImage}
-                alt="A warm, natural desk with documents and a notebook representing organised business records"
-                width={1536}
-                height={1280}
-                className="w-full h-auto object-cover"
+                alt="Amani Nzuri Information Management Consulting — established 2024"
+                className="w-full h-full object-contain"
               />
             </div>
             <FloatingCard />
