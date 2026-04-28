@@ -7,7 +7,7 @@ export const Route = createFileRoute("/features")({
   head: () => ({
     meta: [
       { title: "Features — Amani Nzuri" },
-      { name: "description", content: "Everything Petal does to keep your client records and documents calm, searchable, and safe in the cloud." },
+      { name: "description", content: "Everything Amani Nzuri does to keep your client records and documents calm, searchable, and safe in the cloud." },
       { property: "og:title", content: "Features — Amani Nzuri" },
       { property: "og:description", content: "Cloud storage, AI document extraction, tags, sharing, and more." },
     ],
