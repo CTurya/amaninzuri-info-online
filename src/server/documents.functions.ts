@@ -1,7 +1,10 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import type { Database } from "@/integrations/supabase/types";
 import { runExtraction } from "./documents.server";
+
+type Json = Database["public"]["Tables"]["documents"]["Update"]["extracted_data"];
 
 const extractInput = z.object({ documentId: z.string().uuid() });
 
@@ -39,7 +42,7 @@ export const extractDocument = createServerFn({ method: "POST" })
         .from("documents")
         .update({
           extracted_text: result.extracted_text,
-          extracted_data,
+          extracted_data: extracted_data as Json,
           status: "needs_review",
         })
         .eq("id", doc.id);
@@ -52,7 +55,7 @@ export const extractDocument = createServerFn({ method: "POST" })
         .from("documents")
         .update({
           status: "failed",
-          extracted_data: { error: message, extracted_at: new Date().toISOString(), approved: false },
+          extracted_data: { error: message, extracted_at: new Date().toISOString(), approved: false } as Json,
         })
         .eq("id", doc.id);
       throw new Error(message);
@@ -96,7 +99,7 @@ export const saveExtraction = createServerFn({ method: "POST" })
       .from("documents")
       .update({
         extracted_text: data.extracted_text,
-        extracted_data,
+        extracted_data: extracted_data as Json,
         status: data.approve ? "approved" : "needs_review",
       })
       .eq("id", doc.id);
