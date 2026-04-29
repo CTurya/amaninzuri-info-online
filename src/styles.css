@@ -159,7 +159,7 @@
   .text-rose-deep { color: var(--rose-deep); }
   .bg-blush { background-color: var(--blush); }
   .bg-cream { background-color: var(--cream); }
-  .border-warm { border-color: oklch(0.84 0.015 75); }
+  .border-warm { border-color: oklch(0.92 0.005 240); }
   .text-magenta { color: var(--magenta); }
   .bg-magenta { background-color: var(--magenta); }
 
