@@ -40,7 +40,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-warm/70 py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Amani Nzuri Information Management Consulting. All rights reserved.
+        © 2025 Amani Nzuri Information Management Consulting. All rights reserved.
       </div>
     </footer>
   );
