@@ -3,7 +3,7 @@ import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { attachSupabaseAuth } from "./auth-client-middleware";
 import type { Database } from "@/integrations/supabase/types";
-import { runExtraction } from "./documents.server";
+import { runExtraction } from "@/server/documents.server";
 
 type Json = Database["public"]["Tables"]["documents"]["Update"]["extracted_data"];
 
