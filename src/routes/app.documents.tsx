@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useServerFn } from "@tanstack/react-start";
-import { extractDocument } from "@/server/documents.functions";
+import { extractDocument } from "@/lib/documents.functions";
 import { Upload, FileText, Sparkles, Trash2, Download, ChevronRight, RefreshCw, CheckCircle2, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
 
