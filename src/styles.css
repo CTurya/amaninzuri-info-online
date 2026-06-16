@@ -40,7 +40,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --font-display: "Fraunces", "Cormorant Garamond", Georgia, serif;
+  --font-display: "Inter", "Space Grotesk", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 
