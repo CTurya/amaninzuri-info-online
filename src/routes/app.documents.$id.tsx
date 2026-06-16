@@ -2,7 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useServerFn } from "@tanstack/react-start";
-import { extractDocument, saveExtraction } from "@/server/documents.functions";
+import { extractDocument, saveExtraction } from "@/lib/documents.functions";
 import {
   ArrowLeft, Sparkles, Save, CheckCircle2, RefreshCw, Plus, Trash2, FileText, AlertCircle, Download,
 } from "lucide-react";
