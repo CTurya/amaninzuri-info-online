@@ -8,7 +8,7 @@ export function SiteHeader() {
       <div className="bg-background/80 backdrop-blur-md border-b border-white/5">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-2 flex items-center justify-center gap-2 text-xs text-muted-foreground">
           <span className="hidden sm:inline">📣 Now offering free 30-min discovery consultations for SMEs —</span>
-          <Link to="/auth" className="text-accent font-medium inline-flex items-center gap-1 hover:underline">
+          <Link to="/book" className="text-accent font-medium inline-flex items-center gap-1 hover:underline">
             Book yours <ArrowRight className="h-3 w-3" />
           </Link>
         </div>
