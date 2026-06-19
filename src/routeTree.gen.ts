@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as FeaturesRouteImport } from './routes/features'
+import { Route as BookRouteImport } from './routes/book'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AppRouteImport } from './routes/app'
 import { Route as AboutRouteImport } from './routes/about'
@@ -28,6 +29,11 @@ const PricingRoute = PricingRouteImport.update({
 const FeaturesRoute = FeaturesRouteImport.update({
   id: '/features',
   path: '/features',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthRoute = AuthRouteImport.update({
@@ -76,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/app': typeof AppRouteWithChildren
   '/auth': typeof AuthRoute
+  '/book': typeof BookRoute
   '/features': typeof FeaturesRoute
   '/pricing': typeof PricingRoute
   '/app/clients': typeof AppClientsRoute
@@ -87,6 +94,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
+  '/book': typeof BookRoute
   '/features': typeof FeaturesRoute
   '/pricing': typeof PricingRoute
   '/app/clients': typeof AppClientsRoute
@@ -100,6 +108,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/app': typeof AppRouteWithChildren
   '/auth': typeof AuthRoute
+  '/book': typeof BookRoute
   '/features': typeof FeaturesRoute
   '/pricing': typeof PricingRoute
   '/app/clients': typeof AppClientsRoute
@@ -114,6 +123,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/app'
     | '/auth'
+    | '/book'
     | '/features'
     | '/pricing'
     | '/app/clients'
@@ -125,6 +135,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/auth'
+    | '/book'
     | '/features'
     | '/pricing'
     | '/app/clients'
@@ -137,6 +148,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/app'
     | '/auth'
+    | '/book'
     | '/features'
     | '/pricing'
     | '/app/clients'
@@ -150,6 +162,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AppRoute: typeof AppRouteWithChildren
   AuthRoute: typeof AuthRoute
+  BookRoute: typeof BookRoute
   FeaturesRoute: typeof FeaturesRoute
   PricingRoute: typeof PricingRoute
 }
@@ -168,6 +181,13 @@ declare module '@tanstack/react-router' {
       path: '/features'
       fullPath: '/features'
       preLoaderRoute: typeof FeaturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth': {
@@ -260,6 +280,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AppRoute: AppRouteWithChildren,
   AuthRoute: AuthRoute,
+  BookRoute: BookRoute,
   FeaturesRoute: FeaturesRoute,
   PricingRoute: PricingRoute,
 }
