@@ -38,7 +38,7 @@ export function SiteHeader() {
             </nav>
 
             <Link
-              to="/auth"
+              to="/book"
               className="inline-flex items-center gap-2 rounded-full bg-gradient-rose px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-warm hover:opacity-95 transition-opacity"
             >
               Book Consultation
