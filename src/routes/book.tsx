@@ -99,14 +99,12 @@ function BookPage() {
               {submitted ? (
                 <div className="mt-8 rounded-2xl border border-warm bg-blush/40 p-6 text-sm">
                   <div className="flex items-center gap-2 text-rose-deep font-semibold">
-                    <CheckCircle2 className="h-5 w-5" /> Almost there
+                    <CheckCircle2 className="h-5 w-5" /> Request sent
                   </div>
                   <p className="mt-2 text-foreground/70">
-                    Your email app should have opened with your request. If not, email us directly at{" "}
-                    <a href="mailto:amaninzuripty@gmail.com" className="text-rose-deep underline">
-                      amaninzuripty@gmail.com
-                    </a>{" "}
-                    and we'll confirm a time within one business day.
+                    Thanks {form.name || "there"} — your consultation request has been delivered. We'll confirm a time
+                    within one business day at{" "}
+                    <span className="text-rose-deep">{form.email}</span>.
                   </p>
                 </div>
               ) : (
