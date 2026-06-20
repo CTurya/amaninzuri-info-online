@@ -132,11 +132,17 @@ function BookPage() {
                       placeholder="Briefly describe your records, current systems, volumes and what success looks like."
                     />
                   </label>
+                  {error && (
+                    <div className="rounded-xl border border-rose-deep/40 bg-rose-deep/5 px-4 py-3 text-sm text-rose-deep">
+                      {error}
+                    </div>
+                  )}
                   <button
                     type="submit"
-                    className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-rose px-6 py-3 text-sm font-semibold text-primary-foreground shadow-warm hover:opacity-95 transition-opacity"
+                    disabled={loading}
+                    className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-rose px-6 py-3 text-sm font-semibold text-primary-foreground shadow-warm hover:opacity-95 transition-opacity disabled:opacity-60"
                   >
-                    Send request <ArrowRight className="h-4 w-4" />
+                    {loading ? "Sending..." : "Send request"} <ArrowRight className="h-4 w-4" />
                   </button>
                 </form>
               )}
