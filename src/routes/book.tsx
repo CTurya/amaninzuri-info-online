@@ -20,6 +20,8 @@ export const Route = createFileRoute("/book")({
 
 function BookPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -30,14 +32,38 @@ function BookPage() {
     preferredTime: "",
   });
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const subject = encodeURIComponent(`Consultation request — ${form.name}${form.company ? ` (${form.company})` : ""}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nCompany: ${form.company}\nEmail: ${form.email}\nPhone: ${form.phone}\nIndustry: ${form.industry}\nPreferred time: ${form.preferredTime}\n\nChallenge / context:\n${form.challenge}`,
-    );
-    window.location.href = `mailto:amaninzuripty@gmail.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "300cc42b-4a0d-4bf0-aa66-ad9af52998f6",
+          subject: `Consultation request — ${form.name}${form.company ? ` (${form.company})` : ""}`,
+          from_name: form.name,
+          email: form.email,
+          name: form.name,
+          company: form.company,
+          phone: form.phone,
+          industry: form.industry,
+          preferred_time: form.preferredTime,
+          message: form.challenge,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError(data.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
