@@ -20,6 +20,8 @@ export const Route = createFileRoute("/book")({
 
 function BookPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -30,14 +32,38 @@ function BookPage() {
     preferredTime: "",
   });
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const subject = encodeURIComponent(`Consultation request — ${form.name}${form.company ? ` (${form.company})` : ""}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nCompany: ${form.company}\nEmail: ${form.email}\nPhone: ${form.phone}\nIndustry: ${form.industry}\nPreferred time: ${form.preferredTime}\n\nChallenge / context:\n${form.challenge}`,
-    );
-    window.location.href = `mailto:amaninzuripty@gmail.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "300cc42b-4a0d-4bf0-aa66-ad9af52998f6",
+          subject: `Consultation request — ${form.name}${form.company ? ` (${form.company})` : ""}`,
+          from_name: form.name,
+          email: form.email,
+          name: form.name,
+          company: form.company,
+          phone: form.phone,
+          industry: form.industry,
+          preferred_time: form.preferredTime,
+          message: form.challenge,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError(data.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -73,14 +99,12 @@ function BookPage() {
               {submitted ? (
                 <div className="mt-8 rounded-2xl border border-warm bg-blush/40 p-6 text-sm">
                   <div className="flex items-center gap-2 text-rose-deep font-semibold">
-                    <CheckCircle2 className="h-5 w-5" /> Almost there
+                    <CheckCircle2 className="h-5 w-5" /> Request sent
                   </div>
                   <p className="mt-2 text-foreground/70">
-                    Your email app should have opened with your request. If not, email us directly at{" "}
-                    <a href="mailto:amaninzuripty@gmail.com" className="text-rose-deep underline">
-                      amaninzuripty@gmail.com
-                    </a>{" "}
-                    and we'll confirm a time within one business day.
+                    Thanks {form.name || "there"} — your consultation request has been delivered. We'll confirm a time
+                    within one business day at{" "}
+                    <span className="text-rose-deep">{form.email}</span>.
                   </p>
                 </div>
               ) : (
@@ -108,11 +132,17 @@ function BookPage() {
                       placeholder="Briefly describe your records, current systems, volumes and what success looks like."
                     />
                   </label>
+                  {error && (
+                    <div className="rounded-xl border border-rose-deep/40 bg-rose-deep/5 px-4 py-3 text-sm text-rose-deep">
+                      {error}
+                    </div>
+                  )}
                   <button
                     type="submit"
-                    className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-rose px-6 py-3 text-sm font-semibold text-primary-foreground shadow-warm hover:opacity-95 transition-opacity"
+                    disabled={loading}
+                    className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-rose px-6 py-3 text-sm font-semibold text-primary-foreground shadow-warm hover:opacity-95 transition-opacity disabled:opacity-60"
                   >
-                    Send request <ArrowRight className="h-4 w-4" />
+                    {loading ? "Sending..." : "Send request"} <ArrowRight className="h-4 w-4" />
                   </button>
                 </form>
               )}
