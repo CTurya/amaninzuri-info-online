@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as RiskCheckRouteImport } from './routes/risk-check'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as BookRouteImport } from './routes/book'
@@ -21,6 +22,11 @@ import { Route as AppDocumentsRouteImport } from './routes/app.documents'
 import { Route as AppClientsRouteImport } from './routes/app.clients'
 import { Route as AppDocumentsIdRouteImport } from './routes/app.documents.$id'
 
+const RiskCheckRoute = RiskCheckRouteImport.update({
+  id: '/risk-check',
+  path: '/risk-check',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
@@ -85,6 +91,7 @@ export interface FileRoutesByFullPath {
   '/book': typeof BookRoute
   '/features': typeof FeaturesRoute
   '/pricing': typeof PricingRoute
+  '/risk-check': typeof RiskCheckRoute
   '/app/clients': typeof AppClientsRoute
   '/app/documents': typeof AppDocumentsRouteWithChildren
   '/app/': typeof AppIndexRoute
@@ -97,6 +104,7 @@ export interface FileRoutesByTo {
   '/book': typeof BookRoute
   '/features': typeof FeaturesRoute
   '/pricing': typeof PricingRoute
+  '/risk-check': typeof RiskCheckRoute
   '/app/clients': typeof AppClientsRoute
   '/app/documents': typeof AppDocumentsRouteWithChildren
   '/app': typeof AppIndexRoute
@@ -111,6 +119,7 @@ export interface FileRoutesById {
   '/book': typeof BookRoute
   '/features': typeof FeaturesRoute
   '/pricing': typeof PricingRoute
+  '/risk-check': typeof RiskCheckRoute
   '/app/clients': typeof AppClientsRoute
   '/app/documents': typeof AppDocumentsRouteWithChildren
   '/app/': typeof AppIndexRoute
@@ -126,6 +135,7 @@ export interface FileRouteTypes {
     | '/book'
     | '/features'
     | '/pricing'
+    | '/risk-check'
     | '/app/clients'
     | '/app/documents'
     | '/app/'
@@ -138,6 +148,7 @@ export interface FileRouteTypes {
     | '/book'
     | '/features'
     | '/pricing'
+    | '/risk-check'
     | '/app/clients'
     | '/app/documents'
     | '/app'
@@ -151,6 +162,7 @@ export interface FileRouteTypes {
     | '/book'
     | '/features'
     | '/pricing'
+    | '/risk-check'
     | '/app/clients'
     | '/app/documents'
     | '/app/'
@@ -165,10 +177,18 @@ export interface RootRouteChildren {
   BookRoute: typeof BookRoute
   FeaturesRoute: typeof FeaturesRoute
   PricingRoute: typeof PricingRoute
+  RiskCheckRoute: typeof RiskCheckRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/risk-check': {
+      id: '/risk-check'
+      path: '/risk-check'
+      fullPath: '/risk-check'
+      preLoaderRoute: typeof RiskCheckRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pricing': {
       id: '/pricing'
       path: '/pricing'
@@ -283,6 +303,7 @@ const rootRouteChildren: RootRouteChildren = {
   BookRoute: BookRoute,
   FeaturesRoute: FeaturesRoute,
   PricingRoute: PricingRoute,
+  RiskCheckRoute: RiskCheckRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
