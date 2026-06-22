@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { ArrowRight, Sparkles, ShieldCheck, FolderSearch, Scale, Laptop, FileSearch, FolderHeart, FileText, GraduationCap, Cloud, CircleCheck as CheckCircle2, BadgeCheck } from "lucide-react";
+import { ArrowRight, Sparkles, ShieldCheck, FolderSearch, Scale, Laptop, FileSearch, FolderHeart, FileText, GraduationCap, Cloud, CircleCheck as CheckCircle2, BadgeCheck, ClipboardCheck } from "lucide-react";
 import heroImage from "@/assets/hero-desk.jpg";
 
 export const Route = createFileRoute("/")({
@@ -33,6 +33,7 @@ function HomePage() {
       <ServicesGrid />
       <Credibility />
       <Stats />
+      <FreeToolCallout />
       <CTASection />
       <SiteFooter />
     </div>
@@ -318,6 +319,30 @@ function Stats() {
   );
 }
 
+function FreeToolCallout() {
+  return (
+    <section className="py-16 bg-cream/60 border-y border-warm">
+      <div className="mx-auto max-w-4xl px-6 text-center">
+        <div className="grid h-12 w-12 mx-auto place-items-center rounded-2xl bg-blush text-rose-deep">
+          <ClipboardCheck className="h-6 w-6" />
+        </div>
+        <h2 className="mt-5 font-display text-3xl sm:text-4xl font-medium text-balance">
+          Not sure where your gaps are? <span className="italic text-rose-deep">Find out in 2 minutes.</span>
+        </h2>
+        <p className="mt-4 text-lg text-foreground/70 max-w-xl mx-auto">
+          Take our free Records &amp; Compliance Risk Check — no signup required — and get an instant snapshot of where your organisation stands.
+        </p>
+        <Link
+          to="/risk-check"
+          className="mt-7 inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-sm font-medium text-background shadow-warm hover:bg-foreground/85 transition-colors"
+        >
+          Take the Free Risk Check <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 function CTASection() {
   return (
     <section className="py-24 lg:py-32">
@@ -333,7 +358,7 @@ function CTASection() {
             to="/book"
             className="inline-flex items-center gap-2 rounded-full bg-gradient-rose px-7 py-4 text-sm font-medium text-primary-foreground shadow-warm hover:opacity-90 transition-opacity"
           >
-            Book your free consultation <ArrowRight className="h-4 w-4" />
+            Book Your Free Consultation <ArrowRight className="h-4 w-4" />
           </Link>
           <a
             href="tel:+27712419994"
