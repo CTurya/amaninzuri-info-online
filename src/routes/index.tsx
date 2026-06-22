@@ -1,21 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import {
-  ArrowRight,
-  Sparkles,
-  ShieldCheck,
-  FolderSearch,
-  Scale,
-  Laptop,
-  FileSearch,
-  FolderHeart,
-  FileText,
-  GraduationCap,
-  Cloud,
-  CheckCircle2,
-  BadgeCheck,
-} from "lucide-react";
+import { ArrowRight, Sparkles, ShieldCheck, FolderSearch, Scale, Laptop, FileSearch, FolderHeart, FileText, GraduationCap, Cloud, CircleCheck as CheckCircle2, BadgeCheck } from "lucide-react";
 import heroImage from "@/assets/hero-desk.jpg";
 
 export const Route = createFileRoute("/")({
@@ -78,13 +64,13 @@ function Hero() {
                 to="/book"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background shadow-warm hover:bg-foreground/85 transition-all hover:gap-3"
               >
-                Book a free records health check <ArrowRight className="h-4 w-4" />
+                Book a Free Records Health Check <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href="#services"
                 className="inline-flex items-center justify-center rounded-full border border-warm bg-card/60 px-6 py-3.5 text-sm font-medium text-foreground hover:bg-card transition-colors backdrop-blur"
               >
-                See how it works
+                See How It Works
               </a>
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
